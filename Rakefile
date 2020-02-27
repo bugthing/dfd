@@ -1,11 +1,10 @@
-require_relative 'config/application'
-require 'rom-sql'
-require 'rom/sql/rake_task'
+require_relative "config/application"
+require "rom-sql"
+require "rom/sql/rake_task"
 
 module Tasks
   module DB
     class Setup
-
       include Rake::DSL
 
       def initialize
@@ -20,7 +19,7 @@ module Tasks
 
       def setup_db
         Dfd::Application.start(:db)
-        ROM::SQL::RakeSupport.env = ROM.container(Dfd::Application['db.config']) do |config|
+        ROM::SQL::RakeSupport.env = ROM.container(Dfd::Application["db.config"]) do |config|
           config.gateways[:default].use_logger(Logger.new($stdout))
         end
       end

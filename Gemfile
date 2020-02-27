@@ -2,14 +2,19 @@
 
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-ruby '~> 2.7.0'
+ruby "~> 2.7.0"
 
-gem 'dry-system'
-gem 'rom'
-gem 'rom-sql'
-gem 'pg'
+gem "dry-system"
+gem "rom"
+gem "rom-sql"
+gem "pg"
 
-gem 'dotenv'
-gem 'rake'
+gem "dotenv"
+gem "rake"
+
+group :test do
+  gem "pry"
+  gem "standard"
+end
