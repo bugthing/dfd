@@ -8,8 +8,8 @@ ruby "~> 2.7.0"
 
 gem "dry-system"
 gem "dry-auto_inject"
-gem 'dry-validation'
-gem 'dry-monads'
+gem "dry-validation"
+gem "dry-monads"
 gem "rom"
 gem "rom-sql"
 gem "pg"
@@ -20,4 +20,6 @@ gem "rake"
 group :test do
   gem "pry"
   gem "standard"
+  gem "rspec"
+  gem "database_cleaner-sequel"
 end

@@ -5,7 +5,7 @@ module Dfd
     end
 
     def name_as_code
-      name.gsub(/[^0-9a-z\-_\\\/]/i, '')
+      name.gsub(/[^0-9a-z\-_\\\/]/i, "")
     end
   end
 end

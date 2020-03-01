@@ -3,8 +3,8 @@ module Dfd
     module Donors
       class CreateDonor < Dry::Validation::Contract
         params do
-          required(:name).filled(:string)
           required(:nhs_number).filled(:string)
+          required(:name).filled(:string)
         end
       end
     end

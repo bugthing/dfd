@@ -5,6 +5,10 @@
 
 Guided by [https://ryanbigg.com/2020/02/rom-and-dry-showcase-part-1](this)
 
+### Tests
+
+    bundle exec rspec
+
 ### DB
 
 Get a docker postgres up and running using this:
