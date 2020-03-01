@@ -14,6 +14,8 @@ RSpec.configure do |config|
   end
 end
 
+require "pry"
+
 require_relative "../config/application"
 Dfd::Application.finalize!
 
