@@ -1,6 +1,10 @@
 module Dfd
   module Repos
     class DonorRepo < ROM::Repository[:donors]
+      include Dependencies["container"]
+
+      struct_namespace Dfd
+
       commands :create,
         use: :timestamps,
         plugins_options: {

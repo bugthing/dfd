@@ -1,6 +1,7 @@
 require_relative "boot"
 
 require "dry/system/container"
+require "dry/auto_inject"
 
 module Dfd
   class Application < Dry::System::Container
@@ -13,4 +14,5 @@ module Dfd
 
     load_paths!("lib")
   end
+  Dependencies = Dry::AutoInject(Application)
 end
