@@ -13,13 +13,16 @@ gem "dry-monads"
 gem "rom"
 gem "rom-sql"
 gem "pg"
-
+gem "hanami-controller"
+gem "hanami-router"
 gem "dotenv"
 gem "rake"
+gem "puma"
 
 group :test do
   gem "pry"
   gem "standard"
   gem "rspec"
   gem "database_cleaner-sequel"
+  gem "rack-test"
 end

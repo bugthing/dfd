@@ -1,5 +1,18 @@
 # Dont Forget the Donor
 
+## Run it
+
+Install ruby libraries
+
+    bundle install
+
+Start the web server
+
+    bundle exec puma 
+
+Make a reuest
+
+    curl 'http://0.0.0.0:9292/donors' -H 'Content-Type: application/json' --data '{"name":"Amy"}'
 
 ## Development
 
