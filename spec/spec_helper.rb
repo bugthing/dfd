@@ -16,9 +16,12 @@ end
 
 require "pry"
 
+Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each {|f| require f }
+
 require_relative "../config/application"
 Dfd::Application.finalize!
 
 require "database_cleaner/sequel"
 DatabaseCleaner.allow_remote_database_url = true
 DatabaseCleaner.strategy = :truncation
+

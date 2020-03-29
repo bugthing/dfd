@@ -15,6 +15,7 @@ gem "rom-sql"
 gem "pg"
 gem "hanami-controller"
 gem "hanami-router"
+gem "hanami-view"
 gem "dotenv"
 gem "rake"
 gem "puma"
@@ -25,4 +26,5 @@ group :test do
   gem "rspec"
   gem "database_cleaner-sequel"
   gem "rack-test"
+  gem "capybara"
 end
