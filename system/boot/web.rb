@@ -13,5 +13,9 @@ Dfd::Application.boot(:web) do |app|
     end
 
     Hanami::View.load!
+
+    Hanami::Controller.configure do
+      default_request_format :html
+    end
   end
 end
