@@ -7,10 +7,7 @@ module Dfd
           include Dry::Monads[:result]
 
           def call(params)
-            path     = Hanami::View.configuration.root.join('root/index.html.erb')
-            template = Hanami::View::Template.new(path)
-
-            self.body = Dfd::Web::Views::Root::Index.new(template).render
+            self.body = Views::Root::Index.render(format: format, params: params)
           end
         end
       end

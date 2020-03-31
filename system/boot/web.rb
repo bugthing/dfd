@@ -8,7 +8,9 @@ Dfd::Application.boot(:web) do |app|
   start do
     Hanami::View.configure do
       root 'lib/dfd/web/templates'
+      namespace 'Dfd::Web::Views'
     end
+
     Hanami::View.load!
   end
 end

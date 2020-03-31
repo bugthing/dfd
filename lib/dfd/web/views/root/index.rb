@@ -4,9 +4,6 @@ module Dfd
       module Root
         class Index
           include Hanami::View
-
-          def call(params)
-          end
         end
       end
     end
