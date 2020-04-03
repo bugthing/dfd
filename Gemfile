@@ -19,9 +19,14 @@ gem "hanami-view"
 gem "dotenv"
 gem "rake"
 gem "puma"
+gem "omniauth-google-oauth2"
+gem "warden"
+
+group :test, :development do
+  gem "pry"
+end
 
 group :test do
-  gem "pry"
   gem "standard"
   gem "rspec"
   gem "database_cleaner-sequel"

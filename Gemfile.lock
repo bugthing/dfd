@@ -78,6 +78,8 @@ GEM
       dry-equalizer (~> 0.2)
       dry-initializer (~> 3.0)
       dry-schema (~> 1.4, >= 1.4.3)
+    faraday (1.0.1)
+      multipart-post (>= 1.2, < 3)
     hanami-controller (1.3.3)
       hanami-utils (~> 1.3)
       rack (~> 2.0)
@@ -91,19 +93,40 @@ GEM
     hanami-view (1.3.3)
       hanami-utils (~> 1.3)
       tilt (~> 2.0, >= 2.0.1)
+    hashie (4.1.0)
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     ice_nine (0.11.2)
     jaro_winkler (1.5.4)
+    jwt (2.2.1)
     method_source (0.9.2)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
+    multi_json (1.14.1)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    oauth2 (1.4.4)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.9.1)
+      hashie (>= 3.4.6)
+      rack (>= 1.6.2, < 3)
+    omniauth-google-oauth2 (0.8.0)
+      jwt (>= 2.0)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.6)
+    omniauth-oauth2 (1.6.0)
+      oauth2 (~> 1.1)
+      omniauth (~> 1.9)
     parallel (1.19.1)
-    parser (2.7.0.3)
+    parser (2.7.1.0)
       ast (~> 2.4.0)
     pg (1.2.2)
     pry (0.12.2)
@@ -118,6 +141,7 @@ GEM
     rainbow (3.0.0)
     rake (13.0.1)
     regexp_parser (1.7.0)
+    rexml (3.2.4)
     rom (5.2.1)
       rom-changeset (~> 5.2)
       rom-core (~> 5.2)
@@ -159,25 +183,28 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
-    rubocop (0.79.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
       rainbow (>= 2.2.2, < 4.0)
+      rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     rubocop-performance (1.5.2)
       rubocop (>= 0.71.0)
     ruby-progressbar (1.10.1)
     sequel (5.29.0)
-    standard (0.1.10)
-      rubocop (~> 0.79.0)
-      rubocop-performance (~> 1.5.1)
+    standard (0.2.3)
+      rubocop (~> 0.80.1)
+      rubocop-performance (~> 1.5.2)
     tilt (2.0.10)
     transproc (1.1.1)
     unicode-display_width (1.6.1)
     url_mount (0.2.1)
       rack
+    warden (1.2.8)
+      rack (>= 2.0.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -195,6 +222,7 @@ DEPENDENCIES
   hanami-controller
   hanami-router
   hanami-view
+  omniauth-google-oauth2
   pg
   pry
   puma
@@ -204,6 +232,7 @@ DEPENDENCIES
   rom-sql
   rspec
   standard
+  warden
 
 RUBY VERSION
    ruby 2.7.0p0

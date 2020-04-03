@@ -9,8 +9,8 @@ module Dfd
         use: :timestamps,
         plugins_options: {
           timestamps: {
-            timestamps: %i[created_at updated_at],
-          },
+            timestamps: %i[created_at updated_at]
+          }
         }
 
       def all
