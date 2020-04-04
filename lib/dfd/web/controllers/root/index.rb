@@ -6,7 +6,7 @@ module Dfd
           include Hanami::Action
 
           def call(params)
-            self.body = Views::Root::Index.render(format: format, params: params)
+            self.body = Views::Root::Index.render(format: :html, **exposures)
           end
         end
       end

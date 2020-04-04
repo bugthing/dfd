@@ -1,7 +1,7 @@
 Dont forget the donor
 
-<% if false %>
-  Hello, <%= current_user.name %> | <%= link_to "Sign out", "/auth/signout" %>
+<% if current_user %>
+  Hello, <%= current_user.name %> | <a href="/auth/signout">Sign out</a>
 <% else %>
   <a href="/auth/google_oauth2">Login to Google</a>
 <% end %>

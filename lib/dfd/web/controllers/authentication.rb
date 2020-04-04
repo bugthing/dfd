@@ -9,7 +9,7 @@ module Dfd
         end
 
         def current_user
-          @current_user ||= warden.user
+          warden.user
         end
 
         def warden

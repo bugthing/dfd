@@ -9,6 +9,15 @@ Dfd::Application.boot(:web) do |app|
   end
 
   start do
+    Hanami::Controller.configure do
+      default_request_format :html
+
+      prepare do
+        include Hanami::Action::Session
+        include Dfd::Web::Controllers::Authentication
+      end
+    end
+
     Hanami::View.configure do
       root 'lib/dfd/web/templates'
       namespace 'Dfd::Web::Views'
@@ -16,14 +25,5 @@ Dfd::Application.boot(:web) do |app|
     end
 
     Hanami::View.load!
-
-    Hanami::Controller.configure do
-      default_request_format :html
-
-        prepare do
-          include Hanami::Action::Session
-          include Dfd::Web::Controllers::Authentication
-        end
-    end
   end
 end
