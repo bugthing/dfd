@@ -1,12 +1,12 @@
 module Dfd
   module Web
-    Router = Hanami::Router.new do
-      root to: Controllers::Root::Index
-      post '/donors', to: Controllers::Donors::Create
+    Router = Hanami::Router.new(namespace: Dfd::Web::Controllers) do
+      root to: 'root#index'
+      post '/donors', to: 'donors#create'
 
-      get '/auth/failure', to: Controllers::Session::Failure
-      get '/auth/signout', to: Controllers::Session::Destroy
-      get '/auth/:provider/callback', to: Controllers::Session::New
+      get '/auth/failure', to: 'session#failure'
+      get '/auth/signout', to: 'session#destroy'
+      get '/auth/:provider/callback', to: 'session#new'
     end
   end
 end
