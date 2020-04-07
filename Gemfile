@@ -16,6 +16,7 @@ gem "pg"
 gem "hanami-controller"
 gem "hanami-router"
 gem "hanami-view"
+gem "hanami-assets"
 gem "dotenv"
 gem "rake"
 gem "puma"
@@ -24,6 +25,13 @@ gem "warden"
 
 group :test, :development do
   gem "pry"
+end
+
+group :development do
+  gem "foreman"
+  gem "guard"
+  gem "guard-bundler"
+  gem "guard-rack"
 end
 
 group :test do

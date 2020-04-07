@@ -1,0 +1,19 @@
+{
+  "name": "dfd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bugthing/dfd.git",
+  "author": "Benjamin Martin <ben@madeofpaper.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "devserve": "webpack-dev-server",
+    "build": "webpack"
+  }
+}

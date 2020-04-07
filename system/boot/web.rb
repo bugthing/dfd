@@ -4,6 +4,7 @@ Dfd::Application.boot(:web) do |app|
     require "hanami-controller"
     require 'hanami/action/session'
     require "hanami-view"
+    require 'hanami/assets'
     require "warden"
     require "omniauth-google-oauth2"
   end
@@ -22,8 +23,20 @@ Dfd::Application.boot(:web) do |app|
       root 'lib/dfd/web/templates'
       namespace 'Dfd::Web::Views'
       layout :application
+
+      prepare do
+        include Hanami::Assets::Helpers
+      end
     end
 
     Hanami::View.load!
+
+    Hanami::Assets.configure do
+      compile false
+      cdn true
+      host '0.0.0.0'
+      port 9293
+    end.load!
+
   end
 end

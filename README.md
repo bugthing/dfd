@@ -6,17 +6,23 @@ Install ruby libraries
 
     bundle install
 
-Start the web server
+Install javasciprt libraries
 
-    bundle exec puma 
+    yarn install
 
-Make a reuest
+Start the web servers
+
+    foreman start
+
+Make a request, by [visiting in browser](http://0.0.0.0:9292/) or making an api request:
 
     curl 'http://0.0.0.0:9292/donors' -H 'Content-Type: application/json' --data '{"name":"Amy"}'
 
 ## Development
 
 Guided by [https://ryanbigg.com/2020/02/rom-and-dry-showcase-part-1](this)
+and [https://github.com/hanami/controller](this)
+and [https://github.com/hanami/view](this)
 
 ### Tests
 

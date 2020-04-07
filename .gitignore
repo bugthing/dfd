@@ -1,3 +1,4 @@
 .tool-versions
 .env
 tags
+node_modules
