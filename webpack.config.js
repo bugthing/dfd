@@ -10,6 +10,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'lib/dfd/web/assets'),
     compress: true,
-    port: 9293
+    port: 9293,
+    host: '0.0.0.0'
   }
 }

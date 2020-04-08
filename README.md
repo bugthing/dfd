@@ -50,3 +50,13 @@ Use migrations to handle db schema changes
     bundle exec rake "db:create_migration[create_donors]"
     bundle exec rake db:migrate
 
+## Docker
+
+Running for the first time, do the following to configure a fresh db:
+
+    docker-compose run web bash -c 'sleep 20 && rake db:reset'
+
+Now you can run the containers
+
+    docker-compose up
+

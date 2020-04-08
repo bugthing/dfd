@@ -30,7 +30,6 @@ end
 group :development do
   gem "foreman"
   gem "guard"
-  gem "guard-bundler"
   gem "guard-rack"
 end
 
