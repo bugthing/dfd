@@ -32,6 +32,6 @@ CMD rackup -o 0.0.0.0
 
 FROM base AS dfd-development
 
-RUN bundle install
+RUN bundle install --with=development --with=test
 
 CMD foreman start
