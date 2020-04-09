@@ -9,19 +9,6 @@ services:
       - POSTGRES_PASSWORD=postgres
     volumes:
       - ./docker/docker-entrypoint-initdb:/docker-entrypoint-initdb.d:ro
-
   web:
-    build:
-      context: .
-      target: dfd-development
-    container_name: dfd-development-web
-    ports:
-      - 9292:9292
-      - 9293:9293
-    environment:
-      - DATABASE_URL=postgres://postgres:postgres@postgres/dfd
     depends_on:
       - postgres
-    tty: true
-    volumes:
-      - .:/usr/app

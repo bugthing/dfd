@@ -33,9 +33,14 @@ Dfd::Application.boot(:web) do |app|
 
     Hanami::Assets.configure do
       compile false
-      cdn true
-      host '0.0.0.0'
-      port 9293
+
+      environment = ENV.fetch('APP_ENV') { 'development' }
+      if environment == 'production'
+      else
+        cdn true
+        host '0.0.0.0'
+        port 9293
+      end
     end.load!
 
   end

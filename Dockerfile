@@ -1,6 +1,6 @@
 FROM ruby:2.7-alpine AS base
 
-ENV BUILD_PACKAGES build-base bash postgresql-dev libxml2 libxslt build-base nodejs-current yarn
+ENV BUILD_PACKAGES build-base bash postgresql-dev postgresql-client libxml2 libxslt build-base nodejs-current yarn
 
 RUN apk update && \
     apk upgrade && \
@@ -26,12 +26,12 @@ COPY . /usr/app
 
 FROM base AS dfd-production
 
-CMD rackup -o 0.0.0.0
+RUN yarn run build
+
+# TODO install and setup nginx to serve static and proxy to ruby app
 
 ## TARGET:
 
 FROM base AS dfd-development
 
 RUN bundle install --with=development --with=test
-
-CMD foreman start

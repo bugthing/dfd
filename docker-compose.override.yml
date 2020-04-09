@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      target: dfd-development
+    container_name: dfd-development-web
+    ports:
+      - 9292:9292
+      - 9293:9293
+    volumes:
+      - .:/usr/app
+    tty: true
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@postgres/dfd
+    command: bash -c './docker/wait-for-postgres.sh && bundle exec rake db:reset; foreman start'

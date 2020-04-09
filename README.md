@@ -52,11 +52,12 @@ Use migrations to handle db schema changes
 
 ## Docker
 
-Running for the first time, do the following to configure a fresh db:
-
-    docker-compose run web bash -c 'sleep 20 && rake db:reset'
-
-Now you can run the containers
+You can run the application in containers using docker-compose, the default is setup for development.
 
     docker-compose up
+
+When ready to deploy, there is a docker compose file of overrides for a production style execution.
+
+    docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+
 

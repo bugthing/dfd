@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      target: dfd-production
+    container_name: dfd-production-web
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/usr/app
+    tty: true
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=postgres://postgres:postgres@postgres/dfd
+    command: bash -c 'bundle exec rackup -o 0.0.0.0 -p 9000'
