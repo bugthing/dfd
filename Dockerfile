@@ -28,8 +28,6 @@ FROM base AS dfd-production
 
 RUN yarn run build
 
-# TODO install and setup nginx to serve static and proxy to ruby app
-
 ## TARGET:
 
 FROM base AS dfd-development

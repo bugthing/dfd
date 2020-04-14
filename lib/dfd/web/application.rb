@@ -6,6 +6,8 @@ module Dfd
       Rack::Builder.new do
         use Rack::Session::Cookie, secret: ENV["COOKIE_SECRET"]
 
+        use Rack::Static, root: "#{__dir__}/public", urls: ["/assets"]
+
         use Warden::Manager do |manager|
           manager.failure_app = Dfd::Web::Controllers::Session::Failure.new
         end

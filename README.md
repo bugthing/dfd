@@ -52,12 +52,14 @@ Use migrations to handle db schema changes
 
 ## Docker
 
-You can run the application in containers using docker-compose, the default is setup for development.
+To make ease use of this application in Docker we use docker-compose. The base config is in `docker-compose.yml`, the
+development environment uses `docker-compose.override.yml` to overlay the config (default behaviour). For the production
+environment we use `docker-compose.prod.yml` for the config overlay.
+
+The default is setup for development.
 
     docker-compose up
 
 When ready to deploy, there is a docker compose file of overrides for a production style execution.
 
     docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
-
-

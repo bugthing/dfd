@@ -22,6 +22,7 @@ gem "rake"
 gem "puma"
 gem "omniauth-google-oauth2"
 gem "warden"
+gem "falcon"
 
 group :test, :development do
   gem "pry"

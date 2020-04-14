@@ -7,10 +7,9 @@ services:
     container_name: dfd-production-web
     ports:
       - 9000:9000
-    volumes:
-      - .:/usr/app
     tty: true
     environment:
       - APP_ENV=production
       - DATABASE_URL=postgres://postgres:postgres@postgres/dfd
-    command: bash -c 'bundle exec rackup -o 0.0.0.0 -p 9000'
+      - COOKIE_SECRET=16f874505fa1fb5b7b04575ee4e72f7fa47c6a047c626bcd3277c8a54e203d73
+    command: bash -c './docker/wait-for-postgres.sh && bundle exec rake db:migrate && bundle exec falcon serve --bind http://0.0.0.0:9000'
